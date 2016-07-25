@@ -4,14 +4,7 @@ __author__ = 'Petar'
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Remote(
-   command_executor='http://USERNAME:ACCESS_KEY@YOUR_SUBDOMAIN.gridlastic.com:80/wd/hub',
-   desired_capabilities={
-            "browserName": "firefox",
-            "version": "45",
-            "platform": "VISTA",
-            "video": "True"
-        })
+driver = webdriver.Remote("http://localhost:4444/wd/hub", webdriver.DesiredCapabilities.FIREFOX)
 
 driver.implicitly_wait(30)
 driver.maximize_window() # If platform is Linux instead use: driver.set_window_size(1920,1080)
